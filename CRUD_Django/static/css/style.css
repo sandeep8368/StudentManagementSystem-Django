@@ -1,0 +1,163 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #1e1e1e, #3a3a3a);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #222;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #f50057;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #00e5ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.add-btn {
+    padding: 15px 30px;
+    background-color: #00e5ff;
+    color: #222;
+    font-size: 1.4rem;
+    border: 2px solid #00e5ff;
+    border-radius: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.add-btn:hover {
+    background-color: #f50057;
+    color: white;
+    border: 2px solid #f50057;
+    transform: scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Main Content */
+main {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+main h2 {
+    font-size: 2rem;
+    color: #ff4081;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Card Layout */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.student-card {
+    background: #3a3a3a;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.student-card p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.student-card strong {
+    color: #00e5ff;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+/* Update Button */
+.update-btn {
+    background-color: #ff4081;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #f50057;
+    transform: scale(1.05);
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #00e5ff;
+    color: #222;
+}
+
+.delete-btn:hover {
+    background-color: #00b0ff;
+    transform: scale(1.05);
+}
+
+/* Button Hover Effects */
+button:hover {
+    transform: rotate(15deg);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .student-card {
+        width: 100%;
+    }
+
+    .add-btn {
+        width: 100%;
+        font-size: 1.4rem;
+        padding: 18px;
+    }
+}

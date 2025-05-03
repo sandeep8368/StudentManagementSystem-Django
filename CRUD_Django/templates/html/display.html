@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body><center>
+    <div class="container">
+        {% block title %}
+        <header>
+            <h1>Student Records</h1>
+            <a href="{% url 'add' %}">
+                <button class="add-btn">+ Add Student</button>
+            </a>
+        </header>
+        {% endblock %}
+
+        {% block content %}
+        <main>
+            {% if data %}
+                <h2>Available Students</h2>
+                <div class="card-container">
+                    {% for i in data %}
+                    <div class="student-card">
+                        <p><strong>Name:</strong> {{ i.name }}</p>
+                        <p><strong>Email:</strong> {{ i.email }}</p>
+                        <p><strong>Phone:</strong> {{ i.phone }}</p>
+                        <div class="action-buttons">
+                            <a href="{% url 'update' i.id %}"><button class="update-btn">Update</button></a>
+                            <a href="{% url 'delete' i.id %}"><button class="delete-btn">Delete</button></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <h2>No student data available</h2>
+            {% endif %}
+        </main>
+        {% endblock %}
+    </div>
+</center>
+</body>
+</html>
